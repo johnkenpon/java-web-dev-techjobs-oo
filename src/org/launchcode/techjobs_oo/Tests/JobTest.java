@@ -3,8 +3,8 @@ package org.launchcode.techjobs_oo.Tests;
 import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class JobTest {
 
@@ -33,5 +33,22 @@ public class JobTest {
         assertEquals("Persistence", job3.getCoreCompetency().getValue());
     }
 
+    @Test
+    public void testJobsForEquality(){
+        assertFalse(job1.equals(job2));
+    }
 
+    @Test
+    public void testJobToString(){
+        if(job3.equals(job3)){
+            assertEquals("ID: " + job3.getId() + "\n" + "Name: " + job3.getName() + "\n" +
+            "Employer: " + job3.getEmployer() + "\n" +
+            "Location: " + job3.getLocation() + "\n" +
+            "Position Type: " + job3.getPositionType() + "\n" +
+            "Core Competency: " + job3.getCoreCompetency(), job3.toString());
+        }else if(job3.equals(" ")){
+            System.out.println("Data not available");
+
+        }
+    }
 }
