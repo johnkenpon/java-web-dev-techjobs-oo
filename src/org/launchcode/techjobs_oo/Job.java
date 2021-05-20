@@ -93,4 +93,13 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public String toString(){
+        return  "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency;
+    }
 }
