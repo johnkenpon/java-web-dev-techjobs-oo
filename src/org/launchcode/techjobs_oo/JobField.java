@@ -6,11 +6,6 @@ public abstract class JobField {
     private int id;
     private static int nextId = 1;
     private String value;
-    private String name;
-    private Employer employer;
-    private Location location;
-    private PositionType positionType;
-    private CoreCompetency coreCompetency;
 
     public JobField() {
         id = nextId;
@@ -35,15 +30,21 @@ public abstract class JobField {
     }
 
     @Override
+    public String toString(){
+        return value;
+    }
+
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JobField jobField = (JobField) o;
-        return id == jobField.id && value.equals(jobField.value) && name.equals(jobField.name) && employer.equals(jobField.employer) && location.equals(jobField.location) && positionType.equals(jobField.positionType) && coreCompetency.equals(jobField.coreCompetency);
+        return id == jobField.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, value, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
 }

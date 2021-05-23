@@ -37,6 +37,7 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
+
     public String getName() {
         return name;
     }
@@ -94,12 +95,43 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
     public String toString(){
-        return  "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency;
+        String aString;
+        if(getName().equals("")){
+            aString = "\n" + "ID: " + getId() + "\n" + "Name: Data not available";
+        }
+        else{
+            aString = "\n" + "ID: " + getId() + "\n" + "Name: " + getName();
+        }
+
+        if(getEmployer().getValue().equals("")){
+            aString = aString +"\n" + "Employer: Data not available";
+        }
+        else {
+            aString = aString + "\n" + "Employer: " + getEmployer();
+        }
+
+        if(getLocation().getValue().equals("")){
+            aString = aString + "\n" + "Location: Data not available";
+        }
+        else {
+            aString = aString + "\n" + "Location: " + getLocation();
+        }
+
+        if(getPositionType().getValue().equals("")){
+            aString = aString + "\n" + "Position Type: Data not available";
+        }
+        else {
+            aString = aString + "\n" + "Position Type: " + getPositionType();
+        }
+
+        if(getCoreCompetency().getValue().equals("")){
+            aString = aString + "\n" + "Core Competency: Data not available";
+        }
+        else {
+            aString = aString + "\n" + "Core Competency: " + getCoreCompetency() + "\n";
+        }
+        return aString;
     }
 }
